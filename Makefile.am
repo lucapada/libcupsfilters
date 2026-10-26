@@ -100,6 +100,7 @@ check_SCRIPTS = \
 	cupsfilters/test-pdftopdf-no-appearance.sh \
 	cupsfilters/test-pdftopdf-print-scaling-none.sh \
 	cupsfilters/test-pdftopdf-job-sheets.sh \
+	cupsfilters/test-pdftopdf-comments.sh \
 	cupsfilters/test-bannertopdf-unicode.sh \
 	cupsfilters/test-ghostscript-ocr.sh
 
@@ -133,6 +134,7 @@ TESTS = \
 	cupsfilters/test-pdftopdf-no-appearance.sh \
 	cupsfilters/test-pdftopdf-print-scaling-none.sh \
 	cupsfilters/test-pdftopdf-job-sheets.sh \
+	cupsfilters/test-pdftopdf-comments.sh \
 	cupsfilters/test-bannertopdf-unicode.sh \
 	cupsfilters/test-ghostscript-ocr.sh
 
@@ -374,6 +376,7 @@ EXTRA_DIST += cupsfilters/test-pdftopdf-inherited-mediabox.c
 EXTRA_DIST += cupsfilters/test-pdftopdf-no-appearance.c
 EXTRA_DIST += cupsfilters/test-pdftopdf-print-scaling-none.c
 EXTRA_DIST += cupsfilters/test-pdftopdf-job-sheets.c
+EXTRA_DIST += cupsfilters/test-pdftopdf-comments.c
 EXTRA_DIST += cupsfilters/test-bannertopdf-unicode.c
 EXTRA_DIST += cupsfilters/test-ghostscript-ocr.c
 # Generated deterministic lorem text for texttopdf tests

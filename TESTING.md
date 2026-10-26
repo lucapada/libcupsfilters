@@ -38,6 +38,28 @@ cat PATH/TO/INPUT/FILE.filetype | CONTENT_TYPE=<"INPUT_TYPE"> FINAL_CONTENT_TYPE
 ```
 - Printing attributions are given in next sections.
 
+### PDFTOPDF marker regression (issue #233)
+
+After building `testfilters`, run:
+
+```bash
+bash cupsfilters/test-pdftopdf-comments.sh
+```
+
+This test also runs under `make check`. It generates a four-page PDF and
+checks the legacy header comments within the 20 lines scanned by libppd's
+`ppdFilterPDFToPS()`. It verifies page content and order for `number-up`,
+`page-ranges`, their combination, copies passed as a filter argument or option,
+and collation requested with `Collate=True` or `multiple-document-handling`.
+Both the layout and fast page-copy paths are covered.
+
+The PDFio implementation generates copies in the PDF, so the comments must
+request one downstream copy and no hardware collation. The comments are
+written during PDF creation so cross-reference offsets include their bytes.
+The checker rejects PDFio diagnostics (including cross-reference recovery);
+when `qpdf` is installed, every output must also pass `qpdf --check` without
+warnings. No printer or libppd installation is required for this test.
+
 Conversion Rules
 ----------------
 
